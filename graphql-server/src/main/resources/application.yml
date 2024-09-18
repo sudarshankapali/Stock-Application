@@ -1,0 +1,17 @@
+spring:
+    application:
+        name: graph-client
+    jpa:
+        hibernate:
+            ddl-auto: update
+        show-sql: true
+    datasource:
+        url: jdbc:mysql://localhost:3306/issue
+        username: root
+        password:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+    graphql:
+        graphiql:
+            enabled: true
+server:
+    port: 9000

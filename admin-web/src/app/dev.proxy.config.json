@@ -1,0 +1,7 @@
+{
+    "/**": {
+        "target": "https://jsonplaceholder.typicode.com/users",
+        "secure": true,
+        "changeOrigin": false
+    }
+}

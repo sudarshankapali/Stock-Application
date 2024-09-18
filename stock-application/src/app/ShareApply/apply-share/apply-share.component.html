@@ -1,0 +1,54 @@
+<h1 class="apply-share-heading">Apply Share Form</h1>
+<section class="form-body">
+
+    <form [formGroup]="myFrom" (ngSubmit)="onSubmit()">
+
+        <section class="input-body">
+            <label for="userId">UserId:</label>
+            <div class="input-field">
+                <input type="text"id="userId" formControlName="userId"><br>
+            </div>
+        </section>
+        
+        <section class="input-body">
+            <label for="accountNumber">AccountNo:</label>
+            <div class="input-field">
+                <input type="text" id="accountNumber" formControlName="accountNumber"><br>
+
+            </div>
+        </section>
+        
+        <section class="input-body">
+
+            <label for="issueId">IssueId:</label>
+            <div class="input-field">
+
+                <input type="text" id="issueId" formControlName="issueId"><br>
+            </div>
+        </section>
+        
+        <section class="input-body">
+
+            <label for="appliedQuantity">Quantity:</label>
+            <div class="input-field">
+
+                <input type="number" id="appliedQuantity" formControlName="appliedQuantity"><br>
+            </div>
+        </section>
+        
+        <section class="input-body">
+            
+            <label for="crn">CRN:</label>
+            <div class="input-field">
+
+                <input type="text" id="crn" formControlName="crn"><br>
+            </div>
+        </section>
+        
+        <br>
+        <button type="submit" class="submit-btn">Submit</button>
+    </form>
+</section>
+<!-- <div>
+    <p>{{submitResult.message}}</p>
+</div> -->

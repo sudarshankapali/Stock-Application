@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="config-server" />
+        <module name="share-apply" />
+        <module name="graph-client" />
+        <module name="CurrentIssue" />
+        <module name="current-issue-service" />
+        <module name="discovery-server" />
+        <module name="ipo_result_service" />
+        <module name="user_services" />
+        <module name="gateway" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="CurrentIssue" options="-parameters" />
+      <module name="config-server" options="-parameters" />
+      <module name="current-issue-service" options="-parameters" />
+      <module name="discovery-server" options="-parameters" />
+      <module name="gateway" options="-parameters" />
+      <module name="graph-client" options="-parameters" />
+      <module name="ipo_result_service" options="-parameters" />
+      <module name="share-apply" options="-parameters" />
+      <module name="user_services" options="-parameters" />
+    </option>
+  </component>
+</project>

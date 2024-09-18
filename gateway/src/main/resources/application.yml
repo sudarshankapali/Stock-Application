@@ -1,0 +1,84 @@
+spring:
+    application:
+        name: gateway
+    cloud:
+      gateway:
+        globalcors:
+          add-to-simple-url-handler-mapping: true
+          cors-configurations:
+            '[/**]':
+              allowedOrigins:
+                - "http://localhost:4200"
+                - "http://localhost:4300"
+              allowedMethods:
+                - GET
+                - POST
+                - PUT
+                - DELETE
+              allowedHeaders: "*"
+              allowCredentials: true
+#    cloud:
+#      gateway:
+#          routes:
+#              - id : apply_share
+#                uri: http://localhost:8083
+#                predicates:
+#                  - Path=/ipo/**
+#                filters:
+#                  - PrefixPath=/api
+#              - id : current_issue
+#                uri: http://localhost:8081
+#                predicates:
+#                  - Path=/current-issues
+#                filters:
+#                  - PrefixPath=/api
+#              - id : opened_issues
+#                uri : http://localhost:8081
+#                predicates:
+#                  - Path=/current-issues/{id}/opened
+#                filters:
+#                  - PrefixPath=/api
+#              - id : specific_issue
+#                uri : http://localhost:8081
+#                predicates:
+#                  - Path=/current-issues/{id}
+#                filters:
+#                  - PrefixPath=/api
+#              - id : add_allotment
+#                uri: http://localhost:8082
+#                predicates:
+#                  - Path=/addAllotment
+#                filters:
+#                  - PrefixPath=/api
+#              - id : allotment_result
+#                uri: http://localhost:8082
+#                predicates:
+#                  - Path=/allotment-result
+#                filters:
+#                  - PrefixPath=/api
+#              - id: add_user
+#                uri: http://localhost:8084
+#                predicates:
+#                  - Path=/addNewUser
+#                filters:
+#                  - PrefixPath=/api
+#              - id: user_details
+#                uri: http://localhost:8084
+#                predicates:
+#                  - Path=/user/{id}
+#                filters:
+#                  - PrefixPath=/api
+#              - id: user_accounts_details
+#                uri: http://localhost:8084
+#                predicates:
+#                  - Path=/users/{userid}/accounts
+#                filters:
+#                  - PrefixPath=/api
+    data:
+      mongodb:
+        uri: mongodb://localhost:27017/
+        database: test
+
+
+server:
+  port: 8000

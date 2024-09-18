@@ -1,0 +1,11 @@
+spring:
+    application:
+        name: ipo-result
+    config:
+        import: "configserver:"
+    cloud:
+        config:
+            discovery:
+                enabled: true
+                service-id: "SERVICE-CONFIG"
+            fail-fast: true

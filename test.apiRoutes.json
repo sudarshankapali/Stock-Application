@@ -1,0 +1,120 @@
+[{
+  "_id": "current-issues",
+  "routeIdentifier": "current-issues",
+  "uri": "http://localhost:8081",
+  "method": "GET",
+  "path": "/api/current-issues",
+  "_class": "org.f1soft.gateway.entity.ApiRoute"
+},
+{
+  "_id": "opened-issues",
+  "routeIdentifier": "opened-issues",
+  "uri": "http://localhost:8081",
+  "method": "GET",
+  "path": "/api/current-issues/{id}/opened",
+  "_class": "org.f1soft.gateway.entity.ApiRoute"
+},
+{
+  "_id": "specific-issues",
+  "routeIdentifier": "specific-issues",
+  "uri": "http://localhost:8081",
+  "method": "GET",
+  "path": "/api/current-issues/{id}",
+  "_class": "org.f1soft.gateway.entity.ApiRoute"
+},
+{
+  "_id": "share-apply",
+  "routeIdentifier": "share-apply",
+  "uri": "http://localhost:8083",
+  "method": "POST",
+  "path": "/api/ipo/apply",
+  "_class": "org.f1soft.gateway.entity.ApiRoute"
+},
+{
+  "_id": "add-user",
+  "routeIdentifier": "add-user",
+  "uri": "http://localhost:8084",
+  "method": "POST",
+  "path": "/api/user/addNewUser",
+  "_class": "org.f1soft.gateway.entity.ApiRoute"
+},
+{
+  "_id": "user-details",
+  "routeIdentifier": "user-details",
+  "uri": "http://localhost:8084",
+  "method": "GET",
+  "path": "/api/user/{id}",
+  "_class": "org.f1soft.gateway.entity.ApiRoute"
+},
+{
+  "_id": "account-details",
+  "routeIdentifier": "account-details",
+  "uri": "http://localhost:8084",
+  "method": "GET",
+  "path": "/api/user/{id}/accounts",
+  "_class": "org.f1soft.gateway.entity.ApiRoute"
+},
+{
+  "_id": "user-id",
+  "routeIdentifier": "user-id",
+  "uri": "http://localhost:8084",
+  "method": "GET",
+  "path": "/api/user/getUserId",
+  "_class": "org.f1soft.gateway.entity.ApiRoute"
+},
+{
+  "_id": "account-number",
+  "routeIdentifier": "account-number",
+  "uri": "http://localhost:8084",
+  "method": "GET",
+  "path": "/api/user/{id}/getAccountNumber",
+  "_class": "org.f1soft.gateway.entity.ApiRoute"
+},
+{
+  "_id": {
+    "$oid": "669e1624c1442ad9ceaa404e"
+  },
+  "routeIdentifier": "share-by-id",
+  "uri": "http://localhost:8083",
+  "method": "GET",
+  "path": "/api/ipo/user/{userID}",
+  "_class": "org.f1soft.gateway.entity.ApiRoute"
+},
+{
+  "_id": {
+    "$oid": "669e165ac1442ad9ceaa404f"
+  },
+  "routeIdentifier": "aplicationId-by-user",
+  "uri": "http://localhost:8083",
+  "method": "GET",
+  "path": "/api/ipo/applicationId/{userID}",
+  "_class": "org.f1soft.gateway.entity.ApiRoute"
+},
+{
+  "_id": {
+    "$oid": "669e17f5c1442ad9ceaa4050"
+  },
+  "routeIdentifier": "add-allotment",
+  "uri": "http://localhost:8082",
+  "method": "POST",
+  "path": "/api/addAllotment/{userId}",
+  "_class": "org.f1soft.gateway.entity.ApiRoute"
+},
+{
+  "_id": {
+    "$oid": "669e1841c1442ad9ceaa4051"
+  },
+  "routeIdentifier": "allotment-result",
+  "uri": "http://localhost:8082",
+  "method": "POST",
+  "path": "/api/allotment-result",
+  "_class": "org.f1soft.gateway.entity.ApiRoute"
+},
+{
+  "_id": "all-user",
+  "routeIdentifier": "all-user",
+  "uri": "http://localhost:8084",
+  "method": "GET",
+  "path": "/api/user",
+  "_class": "org.f1soft.gateway.entity.ApiRoute"
+}]

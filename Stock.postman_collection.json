@@ -1,0 +1,902 @@
+{
+	"info": {
+		"_postman_id": "8d009ea3-1642-4ac9-ac2f-07042a7a2440",
+		"name": "Stock",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32072888"
+	},
+	"item": [
+		{
+			"name": "Gateway",
+			"item": [
+				{
+					"name": "Apply share",
+					"item": [
+						{
+							"name": "Apply IPO",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userId\": \"4\",\r\n    \"accountNumber\": \"332\",\r\n    \"issueId\": \"5\",\r\n    \"appliedQuantity\": 10,\r\n    \"crn\" : \"7357800\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8000/api/ipo/apply",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"ipo",
+										"apply"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Apply IPO",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"userId\": \"12309\",\r\n    \"accountNumber\": \"A765\",\r\n    \"issueId\": \"123\",\r\n    \"appliedQuantity\": 10,\r\n    \"crn\" : \"73578\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8000/ipo/apply",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"ipo",
+												"apply"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "transfer-encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 30 Jun 2024 07:31:05 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"IPO has been applied successfully\",\n    \"data\": {\n        \"applicationId\": \"12309-123-76\",\n        \"issueId\": \"123\",\n        \"userId\": \"12309\",\n        \"status\": \"REJECTED\"\n    }\n}"
+								},
+								{
+									"name": "Apply IPO Error",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"userId\": \"12309\",\r\n    \"accountNumber\": \"A765\",\r\n    \"issueId\": \"1231\",\r\n    \"appliedQuantity\": 10,\r\n    \"crn\" : \"73578\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8000/ipo/apply",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"ipo",
+												"apply"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "transfer-encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 30 Jun 2024 07:36:25 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Unable to apply IPO at the moment\",\n    \"data\": null\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Issue",
+					"item": [
+						{
+							"name": "Get Current Issues",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userId\": \"1234\",\r\n    \"accountNumber\": \"A123\",\r\n    \"issueId\": \"123\",\r\n    \"appliedQuantity\": 10,\r\n    \"crn\" : \"789\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/current-issues",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"current-issues"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Get Current Issues",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8000/current-issues",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"current-issues"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "transfer-encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 30 Jun 2024 07:31:22 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Issues has been fetched\",\n    \"data\": [\n        {\n            \"id\": \"123\",\n            \"name\": \"issue 1\",\n            \"description\": \"this is issue 1\"\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Get Opened Issue",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userId\": \"1234\",\r\n    \"accountNumber\": \"A123\",\r\n    \"issueId\": \"123\",\r\n    \"appliedQuantity\": 10,\r\n    \"crn\" : \"789\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/current-issues/1/opened",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"current-issues",
+										"1",
+										"opened"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Get Opened Issue Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8000/current-issues/123/opened",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"current-issues",
+												"123",
+												"opened"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "transfer-encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 30 Jun 2024 07:31:41 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Issue is currently opened\",\n    \"data\": {\n        \"id\": \"123\",\n        \"name\": \"issue 1\",\n        \"description\": \"this is issue 1\"\n    }\n}"
+								},
+								{
+									"name": "Get Opened Issue Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8000/current-issues/1234/opened",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"current-issues",
+												"1234",
+												"opened"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "transfer-encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 30 Jun 2024 07:32:15 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Issue is not opened\",\n    \"data\": null\n}"
+								}
+							]
+						},
+						{
+							"name": "Get Specific Issue",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userId\": \"1234\",\r\n    \"accountNumber\": \"A123\",\r\n    \"issueId\": \"123\",\r\n    \"appliedQuantity\": 10,\r\n    \"crn\" : \"789\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/current-issues/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"current-issues",
+										"1"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Get Specific Issue Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8000/current-issues/123",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"current-issues",
+												"123"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "transfer-encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 30 Jun 2024 07:32:30 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Issue detail fetched successfully.\",\n    \"data\": {\n        \"id\": \"123\",\n        \"name\": \"issue 1\",\n        \"description\": \"this is issue 1\"\n    }\n}"
+								},
+								{
+									"name": "Get Specific Issue Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8000/current-issues/1234",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"current-issues",
+												"1234"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "transfer-encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 30 Jun 2024 07:32:44 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Issue does not exist\",\n    \"data\": null\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "allotments",
+					"item": [
+						{
+							"name": "Add Allotment",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"applicationId\":\"4-5-76\",\r\n    \"issueId\":\"5\",\r\n    \"noOfAllotments\" : 100\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/addAllotment/4",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"addAllotment",
+										"4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Allotment Result",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"applicationId\":\"4-5-76\",\r\n    \"issueId\":\"5\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/allotment-result",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"allotment-result"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Allotment Result (Not allotted)",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"applicationId\":\"123\",\r\n    \"issueId\":\"4567\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8000/allotment-result",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"allotment-result"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "transfer-encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 30 Jun 2024 07:33:13 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"IPO has not been allotted\",\n    \"allottedQuantity\": 0\n}"
+								},
+								{
+									"name": "Allotment Result Succesful",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"applicationId\":\"123\",\r\n    \"issueId\":\"456\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8000/allotment-result",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"allotment-result"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "transfer-encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 30 Jun 2024 07:33:39 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"IPO has been allotted\",\n    \"allottedQuantity\": 100\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "user-services",
+					"item": [
+						{
+							"name": "Add New User",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userId\":\"3\",\r\n    \"name\":\"sudarshan\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/addNewUser",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"addNewUser"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get User Details",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/api/user/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"user",
+										"1"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Get User Details Succesful",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8000/user/3",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"user",
+												"3"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "transfer-encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 30 Jun 2024 07:33:59 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"User details successfully fetched\",\n    \"data\": {\n        \"userId\": \"3\",\n        \"name\": \"sudarshan\"\n    }\n}"
+								},
+								{
+									"name": "Get User Details Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8000/user/6",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"user",
+												"6"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "transfer-encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 30 Jun 2024 07:34:15 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"User not found\",\n    \"data\": null\n}"
+								}
+							]
+						},
+						{
+							"name": "Get User Accounts Details",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/api/user/3/accounts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"user",
+										"3",
+										"accounts"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Get User Accounts Details Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8000/users/123/accounts",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"users",
+												"123",
+												"accounts"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "transfer-encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 30 Jun 2024 07:34:37 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"User account(s) details successfully fetched\",\n    \"data\": [\n        {\n            \"bankId\": \"12\",\n            \"bankName\": \"Bank1\",\n            \"branchList\": [\n                {\n                    \"branchId\": \"12-01\",\n                    \"branchName\": \"ABC\",\n                    \"accountList\": [\n                        {\n                            \"accountNumber\": \"A123\",\n                            \"accountHoldersName\": \"user1\"\n                        }\n                    ]\n                },\n                {\n                    \"branchId\": \"12-02\",\n                    \"branchName\": \"CDE\",\n                    \"accountList\": [\n                        {\n                            \"accountNumber\": \"A1234\",\n                            \"accountHoldersName\": \"usser12\"\n                        }\n                    ]\n                }\n            ]\n        },\n        {\n            \"bankId\": \"13\",\n            \"bankName\": \"bank2\",\n            \"branchList\": [\n                {\n                    \"branchId\": \"13-01\",\n                    \"branchName\": \"EFR\",\n                    \"accountList\": [\n                        {\n                            \"accountNumber\": \"A789\",\n                            \"accountHoldersName\": \"user34\"\n                        }\n                    ]\n                }\n            ]\n        }\n    ]\n}"
+								},
+								{
+									"name": "Get User Accounts Details Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8000/users/3/accounts",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"users",
+												"3",
+												"accounts"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "transfer-encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 30 Jun 2024 07:34:58 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"User account(s) not found\",\n    \"data\": null\n}"
+								}
+							]
+						},
+						{
+							"name": "All User",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/api/user",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"user"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Dynamic gateway",
+					"item": [
+						{
+							"name": "Add Routes",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\":\"all-user\",\r\n    \"uri\":\"http://localhost:8084\",\r\n    \"method\":\"GET\",\r\n    \"path\":\"/api/user\",\r\n    \"routeIdentifier\": \"all-user\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8000/routes",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"routes"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Refresh Routes",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8000/routes/refresh-routes",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"routes",
+										"refresh-routes"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}

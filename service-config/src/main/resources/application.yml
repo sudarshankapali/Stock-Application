@@ -1,0 +1,19 @@
+spring:
+    application:
+        name: service-config
+    cloud:
+        config:
+            server:
+                git:
+                    profiles: default
+                    default-label: main
+                    uri: https://github.com/sudarshankapali/stock-config
+                    clone-on-start: true
+        discovery:
+            enabled: true
+eureka:
+    client:
+        serviceUrl:
+            defaultZone: http://localhost:8761/eureka/
+server:
+    port: 8080

@@ -1,0 +1,21 @@
+  <h1 class="heading">List of Share Issues</h1>
+<table class="table" *ngIf="issues">
+    <thead>
+      <tr>
+        <th scope="col">Issues Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Description</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let item of issues">
+      <tr class="data-row">
+        <th scope="row">{{ item.id }}</th>
+        <td>{{ item.name }}</td>
+        <td>{{ item.description}}</td>
+        
+      </tr>
+    </tbody>
+  </table>
+  <section class="btn-body">
+    <button routerLink="/apply-share" class="apply-share-btn"> Apply Share</button>
+  </section>

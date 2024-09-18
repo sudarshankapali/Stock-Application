@@ -1,0 +1,81 @@
+type Issue{
+    id: String,
+    name: String
+    description: String
+}
+
+type User{
+    userId: String,
+    name: String
+    accounts: [Account]
+}
+
+type Branch {
+    branchId: String,
+    branchName: String,
+    bank: Bank,
+    accounts: [Account]
+}
+
+type Bank {
+    bankId: String,
+    bankName: String
+}
+
+type Account {
+    accountNumber: String,
+    accountHolderName: String,
+    branch: Branch,
+    user: User
+}
+
+type Allotments {
+    applicationId: String!
+    issueId: String!
+    noOfAllotments: Int!
+}
+
+input AllotmentsInput {
+    applicationId: String!
+    issueId: String!
+    noOfAllotments: Int!
+}
+
+type Query{
+    getIssues: [Issue],
+    getIssueById(id: String): Issue,
+    getUsers: [User],
+    getAllIssueId: [String]
+    getUserById(id: String!) : User
+    getAllUserIds: [String]
+    getAppliedShareById(userId: String!): [ShareApply]
+    getApplicationId(userId: String!): [String]
+    getAllotmentById(applicationId: String!): Allotments
+    existsById(applicationId: String!): Boolean!
+    getAccountsByUserId(userId: String!): [Account]
+    getNoOfAllotments(applicationId: String!, issueId: String!): Int!
+}
+
+type ShareApply {
+    id: ID!
+    userId: String
+    accountNumber: String
+    issueId: String
+    appliedQuantity: Int
+    crn: String
+    applicationId: String
+}
+
+input ShareApplyInput {
+    userId: String
+    accountNumber: String
+    issueId: String
+    appliedQuantity: Int
+    crn: String
+    applicationId: String
+}
+
+type Mutation {
+    createShareApplication(input: ShareApplyInput): ShareApply
+    createAllotment(input: AllotmentsInput): Allotments
+}
